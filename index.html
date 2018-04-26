@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>No.1 - 菜单动画效果 </title>
+</head>
+<style>
+  
+  .ancestor {
+    text-align: center;
+  }
+  .doc {
+    font-size: 3rem;
+    margin: auto;
+    width: 16%;
+    padding: .1rem;
+    transition: color .5s ease;     /* change font color. */
+     -moz-transition: color .5s ease;     /* 兼容低版本firefox */
+    -webkit-transition: color .5s ease;   /* 兼容safari和低版本chrome */
+     -o-transition: color .5s ease;       /* 兼容opera */
+  }
+
+  .doc:after {
+    content: '';
+    height: 3px;
+    display: block;
+    margin: auto;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+  }
+
+  .doc.change:after {
+    background:blue;
+    width: 100%;
+  }
+
+  .doc.change {
+    color: blue;
+  }
+
+  .change-style {
+    position: relative;
+    padding: 0.4rem;
+    font-size: 0.8rem;
+    width: 6rem;
+    border-radius: 0.5rem;
+    margin: 4rem;
+  }
+</style>
+<body>
+  <div class="ancestor">
+    <div class="doc">前端学院</div>
+    <button class="change-style" >切换样式</button>
+  </div>
+</body>
+
+<script>
+  doc = document.querySelector('.doc');
+
+  function toggleChange() {
+    console.log(doc);
+    doc.classList.toggle('change');
+  }
+
+  btn = document.querySelector('.change-style');
+  btn.addEventListener('click', toggleChange);
+</script>
+</html>
