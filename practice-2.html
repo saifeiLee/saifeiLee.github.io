@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css3 - transform</title>
+</head>
+<style>
+    body {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .box0 {
+        width: 5rem;
+        height: 5rem;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box1 {
+        width: 5rem;
+        height: 5rem;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: skewX(30deg);
+        -ms-transform: skewX(30deg);  /* IE: 9 */
+        -webkit-transform: skewX(30deg);  /* Safari */
+    }
+    .box2 {
+        width: 5rem;
+        height: 5rem;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: scaleX(0.5);
+        -ms-transform: scaleX(0.5);      /* IE 9 */
+        -webkit-transform: scaleX(0.5);  /* Safari */
+    }
+    .box3 {
+        width: 5rem;
+        height: 5rem;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+    
+    .box4 {
+        width: 5rem;
+        height: 5rem;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(10px, 20px);
+        -ms-transform: translate(10px, 20px);
+        -webkit-transform: translate(10px, 20px);
+    }
+
+    .box5 {
+        width: 5rem;
+        height: 5rem;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: skewX(30deg) scale(0.5) rotate(45deg) translate(10px, 20px);
+        /* transform: scaleX(0.5);
+        transform: rotate(45deg);
+        transform: translate(10px, 20px);  */
+    }
+</style>
+<body>
+    <div class="box0"><span>box0</span></div> 
+    <div class="box1"><span>box1</span></div> 
+    <div class="box2"><span>box2</span></div> 
+    <div class="box3"><span>box3</span></div> 
+    <div class="box4"><span>box4</span></div> 
+    <div class="box5"><span>box5</span></div> 
+    
+</body>
+</html>
