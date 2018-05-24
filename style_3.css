@@ -45,3 +45,10 @@ section {
 .header2 {
     font-weight: bold;
 }
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
