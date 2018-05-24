@@ -1,0 +1,47 @@
+body {
+    width: 850px;
+    /* border: 2px, solid, grey; */
+}
+
+header {
+    color: white;
+    display: inline-block;
+    width: 850px;
+    vertical-align: middle; 
+    font-size: 1.5em;
+    background-color: #878787;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 10px;
+}
+section {
+    border: 2px solid grey;
+    width: inherit;
+    height: 90px;
+}
+
+.header {
+    height: 90px;
+    width: 90px;
+    background-color: #D7D7D7;
+    font-weight: 500;
+    text-align: center;
+    float: left;
+    /* display: inline-block; */
+    line-height: 90px;
+    vertical-align: middle;
+}
+
+.detail div {
+    float: left;
+    padding: 1em;
+}
+
+.clearfix {
+    clear: both;
+    /* display: none; */
+}
+
+.header2 {
+    font-weight: bold;
+}
