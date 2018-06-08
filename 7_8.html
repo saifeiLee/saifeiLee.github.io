@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<style>
+  header {
+    background-color: #333333;
+    width: 100%;
+    color: white;
+    height: 70px;
+  }
+  .header-section {
+   width: 960px;
+   margin: 0 auto; 
+   position: relative;
+   overflow: hidden;
+  }
+  header .header-section .nav {
+    display: flex;
+    position: absolute;
+    top:5px;
+    right: 10px;
+  }
+
+  header .header-section .nav a {
+   color: aliceblue; 
+   padding: 0.3em;
+  }
+
+  .logo {
+    font-size: 2.5em;
+    line-height: 70px;
+  }
+
+  #banner {
+    width: 100%;
+    height: 300px;
+    background-color: #66bb33;
+  }
+  #banner .numbers {
+    display: flex;
+    position: relative;
+    top: 250px;
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
+
+  .numbers div {
+    border: 1px solid black;
+    height: 20px;
+    margin-right: 0.3em;
+    padding: 0.3em;
+    width: 1em;
+    text-align: center;
+  }
+
+  .numbers a {
+    text-decoration: none;
+  }
+
+
+  .number1:hover {
+    height: 30px;
+  }
+
+
+</style>
+
+<body>
+  <header>
+    <section class="header-section">
+      <div class="logo">Logo</div>
+      <div class="nav">
+        <div id="nav-github"><a href="">Github</a></div>
+        <div id="nav-register"><a href="">Register</a></div>
+        <div id="nav-Login"><a href="">Login</a></div>
+      </div>
+    </section>
+  </header>
+
+  <section id="banner">
+    <div class="numbers">
+      <div class="number1"><a href="">1</a></div>
+      <div class="number2"><a href="">2</a></div>
+      <div class="number3"><a href="">3</a></div>
+      <div class="number4"><a href="">4</a></div>
+    </div>
+  </section>
+</body>
+
+</html>
