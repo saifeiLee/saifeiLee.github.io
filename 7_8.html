@@ -69,7 +69,48 @@
     height: 30px;
   }
 
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 960px;
+    border: 2px solid #E4E4E4;
+    margin: 20px auto;
+  }
 
+  main div {
+    /* width: 30%; */
+    padding: 80px;
+    border: 2px solid #E4E4E4;
+    margin: 3px;
+  }
+
+  nav {
+    height: 50px;
+    /* border: 1px solid; */
+    border-bottom: 1px solid #E4E4E4;
+  }
+
+  nav .nav {
+    display: flex;
+    position: relative;
+    left: 100px;
+  }
+
+  nav .nav div {
+    /* display: inline-block; */
+    padding: 0.7em;
+    border-radius: 10px 10px 0px 0px;
+    border: 1px solid #E4E4E4;
+    border-bottom-style: none;
+  }
+
+  footer {
+    background-color: #666666;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+  }
 </style>
 
 <body>
@@ -92,6 +133,31 @@
       <div class="number4"><a href="">4</a></div>
     </div>
   </section>
+
+  <nav>
+    <div class="nav">
+      <div class="home">HOME</div>
+      <div class="profile">PROFILE</div>
+      <div class="about">ABOUT</div>
+    </div>
+  </nav>
+  
+  <main>
+    <div id="1">content1</div>
+    <div id="2">content1</div>
+    <div id="3">content1</div>
+    <div id="4">content1</div>
+    <div id="5">content1</div>
+    <div id="6">content1</div>
+    <div id="7">content1</div>
+    <div id="8">content1</div>
+    <div id="9">content1</div>
+    <div id="10">content1</div>
+  </main>
+
+  <footer>
+    &copy 2018 waltermitty, baidu front-end colleage.
+  </footer>
 </body>
 
 </html>
