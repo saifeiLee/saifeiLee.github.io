@@ -1,0 +1,110 @@
+#header {
+  background-color: rgb(20, 20, 20);
+  background-image: url(9-11Resource/Background.png);
+  /* opacity: 0.651; */
+  background-size: cover;
+  position: absolute;
+  left: 0px;
+  top: -10px;
+  width: 100%;
+  z-index: 236;
+  margin: 0 auto;
+  padding: 30vw 2em;
+}
+.Hello_World {
+    font-size: 62px;
+    font-family: "Montserrat";
+    color: rgb(255, 255, 255);
+    /* line-height: 1.161; */
+    text-align: center;
+    position: relative;
+    /* left: 10em; */
+    top: -150px;
+    margin: 0 auto;
+    height: 48px;
+    z-index: 257;
+  }
+  
+
+.China_is_speeding_up_strategic_plan__standards_ {
+    font-size: 20px;
+    font-family: "Montserrat";
+    color: rgba(255, 255, 255, 0.702);
+    line-height: 1.6;
+    text-align: center;
+    position: relative;
+    /* left: 6em; */
+    /* top: 372.198px; */
+    margin: 0 auto;
+    width: 766px;
+    height: 84px;
+    z-index: 258;
+  }
+  .Create_Your_Account {
+    font-size: 16px;
+    font-family: "Montserrat";
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    line-height: 1.75;
+    text-align: center;
+    position: relative;
+    top: 10em;
+    margin: 0 auto;
+    z-index: 253;
+  }
+  
+  .It_is_absolutely_free {
+    font-size: 12px;
+    font-family: "Montserrat";
+    color: rgba(255, 255, 255, 0.302);
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+    position: relative;
+    z-index: 254;
+    top: 14em;
+  }
+
+  .info-form {
+      position: relative;
+      top: 13em;
+      width: 50em;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+  }
+
+  .Input_Field {
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-radius: 2px;
+    opacity: 0.2;
+    width: 290px;
+    height: 48px;
+    z-index: 250;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+  }
+
+  .Button {
+    border-radius: 2px;
+    background-color: rgb(255, 255, 255);
+    width: 125px;
+    height: 50px;
+    z-index: 242;
+    text-align: center;
+  }
+  
+  .Sign_Up {
+    font-size: 12px;
+    font-family: "Montserrat";
+    color: rgb(20, 20, 20);
+    text-transform: uppercase;
+    line-height: 50px;
+    z-index: 243;
+  }
+  
+
+  
