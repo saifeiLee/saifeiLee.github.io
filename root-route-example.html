@@ -12,56 +12,112 @@
 
 <body>
     <div id="app">
-        <h1>Named Views</h1>
-        <ul>
-            <li>
-                <router-link to="/">/</router-link>
-            </li>
-            <li>
-                <router-link to="/other">/other</router-link>
-            </li>
-        </ul>
-        <router-view class="view one"></router-view>
-        <router-view class="view two" name="a"></router-view>
-        <router-view class="view three" name="b"></router-view>
+        <h1>Nested Named Views</h1>
+        <router-view></router-view>
     </div>
 </body>
-
 <script>
-    const Foo = {
-        template: '<div>foo</div>'
+    const UserSettingsNav = {
+        template: `
+            <div class="us__nav">
+                <router-link to="/settings/emails">emails</router-link>
+                <br>
+                <router-link to="/settings/profile">profile</router-link>
+            </div>
+        `
     }
-    const Bar = {
-        template: '<div>bar</div>'
-    }   
-    const Baz = {
-        template: '<div>baz</div>'
+    const UserSettings = {
+        template: `
+            <div class="us">
+                <h2>User Settings</h2>
+                <UserSettingsNav />
+                <router-view class="us__content" />
+                <router-view class="us__content us__content--helper" name="helper" />
+            </div>
+        `,
+        components: {
+            UserSettingsNav
+        }
     }
+
+    const UserEmailSubscriptions = {
+        template: `
+            <div>
+                <h3>Email Subscriptions</h3>
+            </div>
+        `
+    }
+
+    const UserProfile = {
+        template: `
+        <div>
+            <h3>Edit your profile</h3>
+        </div>
+        `
+    }
+
+    const UserProfilePreview = {
+        template: `
+            <div>
+               <h3>Preview of your profile</h3>
+            </div>
+        `
+    }
+
     const router = new VueRouter({
         mode: 'history',
         routes: [{
-                path: '/',
+            path: '/settings',
+            component: UserSettings,
+            children: [{
+                path: 'emails',
+                component: UserEmailSubscriptions,
+            }, {
+                path: 'profile',
                 components: {
-                    default: Foo,
-                    a: Bar,
-                    b: Baz
+                    default: UserProfile,
+                    helper: UserProfilePreview
                 }
-            },
-            {
-                path: '/other',
-                components: {
-                    default: Baz,
-                    a: Bar,
-                    b: Foo
-                }
-            }
-        ]
+            }]
+        }]
     })
+    // router.push('/settings/emails')
 
     new Vue({
-        el: '#app',
         router,
+        el: '#app'
     })
 </script>
+<style>
+    .us {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "header header"
+            "nav content"
+            "nav helper"
+        ;
+    }
+
+    h2 {
+        grid-area: header;
+    }
+
+    .us__nav {
+        grid-area: nav;
+        border: 1px dotted;
+        margin-right: .75rem;
+        padding: .3rem;
+    }
+
+    .us__content {
+        grid-area: content;
+    }
+
+    .us__content--helper {
+        grid-area: helper;
+    }
+</style>
 
 </html>
