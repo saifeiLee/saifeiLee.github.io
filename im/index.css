@@ -1,0 +1,30 @@
+html,
+body, .container {
+  height: 100%;
+}
+
+.segment {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.segment .field {
+  padding: 10px;
+}
+
+
+.app-container {
+  height: 100%;
+  display: flex;
+}
+
+
+.section {
+  height: 100%;
+  width: 50%;
+}
+
+.row {
+  padding: 5px;
+}
