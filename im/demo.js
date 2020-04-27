@@ -8,7 +8,7 @@ function App () {
   const [appid, setAppid] = useState('9298e0ebe9234a1b96e32dfd7b3d385e')
   const [uid, setUid] = useState('lisaifei')
   const [token, setToken] = useState('8bf05cb376044d4198faefd3cda49e58')
-  const [roomid, setRoomid] = useState('')
+  const [roomid, setRoomid] = useState(281474983311911)
   const [postData, setPostData] = useState('')
   const [msgType, setMsgType] = useState()
   const [targetId, setTargetId] = useState()
