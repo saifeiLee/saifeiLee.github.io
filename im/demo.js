@@ -7,7 +7,7 @@ function App () {
   const [host, setHost] = useState('wss://mc-dev.test.seewo.com')
   const [appid, setAppid] = useState('9298e0ebe9234a1b96e32dfd7b3d385e')
   const [uid, setUid] = useState('lisaifei')
-  const [token, setToken] = useState('8bf05cb376044d4198faefd3cda49e58')
+  const [token, setToken] = useState('3399972e696941798f1389c8600b55c9')
   const [roomid, setRoomid] = useState(281474983311911)
   const [postData, setPostData] = useState('')
   const [msgType, setMsgType] = useState()
@@ -483,7 +483,7 @@ function App () {
               <input
                 type="text"
                 value={token}
-                onChange={(e) => setUid(e.target.value)}
+                onChange={(e) => setToken(e.target.value)}
                 className="form-control" id="token" placeholder="token" />
             </div>
             <div className="d-flex justify-content-around row">
