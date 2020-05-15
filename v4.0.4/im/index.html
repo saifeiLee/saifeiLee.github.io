@@ -1,0 +1,84 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MIS_SDK demo</title>
+
+	<meta name="renderer" content="webkit">
+
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+	<link rel="icon" type="image/png" href="../../assets/i/favicon.png">
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="icon" sizes="192x192" href="../../assets/i/app-icon72x72@2x.png">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+	<link rel="apple-touch-icon-precomposed" href="../../assets/i/app-icon72x72@2x.png">
+
+	<meta name="msapplication-TileImage" content="../../assets/i/app-icon72x72@2x.png">
+	<meta name="msapplication-TileColor" content="#0e90d2">
+	<style>
+	</style>
+</head>
+
+<body>
+	<!-- <div>host:<input id="host" value="mc.test.seewo.com"/></div> -->
+	<div>host:<input id="host" value="mc.seewo.com"/></div>
+	<div>appid:<input id="appid" value="29a414ccedf245208cd78ef76954e73d" /></div>
+	<div>uid:<input id="uid" value="18813296148"/></div>
+  <div>token:<input id="token" value="8bf05cb376044d4198faefd3cda49e58"/></div>
+  <br />
+	<div>targetId:<input id="targetId"/></div>
+  <div>type:<input id="type"/></div>
+  <div><button onclick="init()">连接</button></div>
+  <br />
+  <div>
+    postData:<textarea id="postData" style="width:500px;height:100px;"></textarea>
+  </div>
+  <div><button onclick="createRoom()">createRoom</button></div>
+  <div><button onclick="joinRoom()">joinRoom</button></div>
+  <div><button onclick="deleteRoom()">deleteRoom</button></div>
+  <div><button onclick="quitRoom()">quitRoom</button></div>
+  <div><button onclick="getRoomMemberSize()">getRoomMemberSize</button></div>
+  <div><button onclick="getRoomMember()">getRoomMember</button></div>
+  <div><button onclick="createGroup()">createGroup</button></div>
+  <div><button onclick="deleteGroup()">deleteGroup</button></div>
+  <div><button onclick="getGroupInfo()">getGroupInfo</button></div>
+  <div><button onclick="setGroupMemberMaxSize()">setGroupMemberMaxSize</button></div>
+  <div><button onclick="setGroupName()">setGroupName</button></div>
+  <div><button onclick="setGroupNotice()">setGroupNotice</button></div>
+  <div><button onclick="getGroupMember()">getGroupMember</button></div>
+  <div><button onclick="getGroupMemberSize()">getGroupMemberSize</button></div>
+  <div><button onclick="addGroupMember()">addGroupMember</button></div>
+  <div><button onclick="removeGroupMember()">removeGroupMember</button></div>
+  <div><button onclick="quitGroup()">quitGroup</button></div>
+  <div><button onclick="setGroupNotDisturb()">setGroupNotDisturb</button></div>
+  <!-- <div><button onclick="getGroupNotDisturbList()">getGroupNotDisturbList</button></div> -->
+  <div><button onclick="setUserNotDisturb()">setUserNotDisturb</button></div>
+  <!-- <div><button onclick="getUserNotDisturbList()">getUserNotDisturbList</button></div> -->
+  <div><button onclick="setGroupOwner()">setGroupOwner</button></div>
+  <div><button onclick="recallMessage()">recallMessage</button></div>
+  <div><button onclick="sendSingleMessage()">sendSingleMessage</button></div>
+  <div><button onclick="sendGroupMessage()">sendGroupMessage</button></div>
+  <div><button onclick="sendRoomMessage()">sendRoomMessage</button></div>
+  <div><button onclick="sendIMSingleCommand()">sendIMSingleCommand</button></div>
+  <div><button onclick="sendIMRoomCommand()">sendIMRoomCommand</button></div>
+  <div><button onclick="pullHisRoomCommand()">pullHisRoomCommand</button></div>
+
+	<script src="./../jquery-v1.11.3.js"></script>
+	<script src="./../MsSDK-4.5.3.min.js"></script>
+  <script src="./../MsSDK-4.5.3.min.js.map"></script>
+	<script src="./index.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+	<script>eruda.init();</script>
+</body>
+
+</html>
