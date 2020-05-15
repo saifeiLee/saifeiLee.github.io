@@ -1,19 +1,19 @@
 var im = new MsSDK.IM()
 function init() {
 
-  const urlObj = new URL(location.href)
+
 
   im.init({
-    host: urlObj.searchParams.get('host') || host.value.trim(),
-    appid: urlObj.searchParams.get('appid') || appid.value.trim(),
-    uid: urlObj.searchParams.get('uid') || uid.value.trim(),
+    host: host.value.trim(),
+    appid: appid.value.trim(),
+    uid: uid.value.trim(),
     pwd: '',
     platform: '4', // web
     auth: {
       user: {
         timestamp: JSON.stringify(new Date().getTime()),
         signature: 'D97C2DDA3E46E5E6D482E9E8EE84AF93',
-        token: urlObj.searchParams.get('token') || token.value.trim()
+        token: token.value.trim()
       }
     },
   })
