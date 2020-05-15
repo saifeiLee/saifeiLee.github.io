@@ -281,7 +281,7 @@ function sendRoomMessage() {
         text: '我全世界最帅!',
       },
       msg_type: 1,
-      target_id: 9570149208414712,
+      target_id: 281474983311911,
     },
   }))
 }
