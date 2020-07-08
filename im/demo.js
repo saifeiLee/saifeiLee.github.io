@@ -157,7 +157,7 @@ function App () {
     IM.sendRoomMessage(fConfig('sendRoomMessage', {
       data: {
         msg_body: {
-          text: '我全世界最帅!',
+          text: message ||'我全世界最帅!',
         },
         msg_type: msgType,
         target_id: roomid,
