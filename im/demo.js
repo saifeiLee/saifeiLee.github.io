@@ -4,11 +4,17 @@ const { Select, Row, Col } = antd
 const { Option } = Select
 
 function App () {
-  const [host, setHost] = useState('wss://mc-dev.test.seewo.com')
-  const [appid, setAppid] = useState('9298e0ebe9234a1b96e32dfd7b3d385e')
-  const [uid, setUid] = useState('lisaifei')
-  const [token, setToken] = useState('829b919a3dc84a43b53b62c50ecdd379')
-  const [roomid, setRoomid] = useState(281474987111632)
+  // const [host, setHost] = useState('wss://mc-dev.test.seewo.com')
+  const [host, setHost] = useState('wss://mc.test.seewo.com')
+  // const [appid, setAppid] = useState('9298e0ebe9234a1b96e32dfd7b3d385e') // dev
+  // const [appid, setAppid] = useState('57ae140a945b4e7596c55f967e0a5db4') // dev
+  const [appid, setAppid] = useState('3e50c3a5a1c14aa49b17676b4ad7509e')  // test
+  // const [appid, setAppid] = useState('9126decd01b447b3850798c95ea341df')  // maxhub
+  const [uid, setUid] = useState('123')
+  // const [token, setToken] = useState('20126f02028f45aa91b6869316e6f02f') // dev
+  const [token, setToken] = useState('737bd677ed9248e3aaf39c698c1392b9') // test
+  // const [roomid, setRoomid] = useState(281474988324926) // dev
+  const [roomid, setRoomid] = useState(281474990411332)  // test
   const [postData, setPostData] = useState('')
   const [msgType, setMsgType] = useState()
   const [targetId, setTargetId] = useState()
@@ -22,12 +28,12 @@ function App () {
 
   const initIM = () => {
     IM.init({
-      host: host,
+      domain: host,
       appid: appid,
       uid: uid,
-      pwd: '',
+      token: '',
       platform: '4', // web
-      auth: {
+      data: {
         user: {
           timestamp: JSON.stringify(new Date().getTime()),
           signature: 'D97C2DDA3E46E5E6D482E9E8EE84AF93',
@@ -35,12 +41,22 @@ function App () {
         }
       }
     })
-      .login()
+      .login({
+        onSuccess: (a, b) => {
+          console.log('login success a, b', a, b)
+        }
+      })
       .onMessageRecv((data, ctx) => {
         console.log('onMessageRecv --> data:');
         console.table(data)
         console.log('onMessageRecv --> context:');
         console.table(ctx)
+      })
+      .onMessageListRecv((data, ctx) => {
+        console.log('onMessageListRecv -->data');
+        console.table(data);
+        console.log('onMessageListRecv --> context:');
+        console.table(ctx);
       })
       .onNoticeRecv((data, ctx) => {
         console.log('onNoticeRecv --> data:');
@@ -72,6 +88,9 @@ function App () {
         console.log('onDisconnect --> context:');
         console.table(ctx)
       })
+      .onError((err) => {
+        console.log('err:-----', err);
+    })
 
   }
 
@@ -157,7 +176,7 @@ function App () {
     IM.sendRoomMessage(fConfig('sendRoomMessage', {
       data: {
         msg_body: {
-          text: message ||'我全世界最帅!',
+          text: message || '我全世界最帅!',
         },
         msg_type: msgType,
         target_id: roomid,
@@ -438,6 +457,32 @@ function App () {
     console.log('targetTypeChange value', value);
     setTargetType(value)
   }
+
+  const setRoomExpireTime = () => {
+    IM.setRoomExpireTime(fConfig('setRoomExpireTime', {
+      data: {
+        roomid: roomid,
+        expire_time: Math.floor(Date.now() / 1000) + 30 * 24 * 60 * 60
+      }
+    }))
+  }
+
+  const getRoomInfo = () => {
+    IM.getRoomInfo(fConfig('getRoomInfo', {
+      data: {
+        roomid,
+      }
+    }))
+  }
+
+  const getLoginPlatform = () => {
+    console.log('getLoginPlatform')
+    IM.getLoginPlatform(fConfig('getLoginPlatform', {
+      data: {
+        uid,
+      }
+    }))
+  }
   useEffect(() => {
     const IM = new MsSDK.IM()
     setIM(IM)
@@ -508,7 +553,6 @@ function App () {
                 onChange={(e) => setMessage(e.target.value)}></textarea>
             </div>
             <div className="d-flex flex-row">
-
               <div className="form-group">
                 <label htmlFor="roomid">房间id</label>
                 <input
@@ -518,6 +562,9 @@ function App () {
                   onChange={(e) => setRoomid(+(e.target.value))}
                   id="roomid" placeholder="roomid" />
               </div>
+            </div>
+            <div className="d-flex flex-row">
+
               <div className="form-group">
                 <label htmlFor="msgType">msgType</label>
                 <input
@@ -604,6 +651,8 @@ function App () {
               <button type="button" className="btn btn-info" onClick={sendRoomMessage}>sendRoomMessage</button>
               <button type="button" className="btn btn-info" onClick={sendIMRoomCommand}>sendIMRoomCommand</button>
               <button type="button" className="btn btn-info" onClick={pullHisRoomCommand}>pullHisRoomCommand</button>
+              <button type="button" className="btn btn-info" onClick={setRoomExpireTime}>SetRoomExpireTime</button>
+              <button type="button" className="btn btn-info" onClick={getRoomInfo}>getRoomInfo</button>
             </div>
           </div>
           <div>
@@ -642,6 +691,7 @@ function App () {
             <div className="btn-group d-flex justify-content-around row">
               <button className="btn btn-xs btn-light" onClick={sendSingleMessage}>sendSingleMessage</button>
               <button className="btn btn-xs btn-light" onClick={sendIMSingleCommand}>sendIMSingleCommand</button>
+              <button className="btn btn-xs btn-light" onClick={getLoginPlatform}>getLoginPlatform</button>
             </div>
           </div>
           <div>
