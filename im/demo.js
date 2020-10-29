@@ -4,15 +4,15 @@ const { Select, Row, Col } = antd
 const { Option } = Select
 
 function App () {
-  // const [host, setHost] = useState('wss://mc-dev.test.seewo.com')
-  const [host, setHost] = useState('wss://mc.test.seewo.com')
+  const [host, setHost] = useState('wss://mc-dev.test.seewo.com')
+  // const [host, setHost] = useState('wss://mc.test.seewo.com')
   // const [appid, setAppid] = useState('9298e0ebe9234a1b96e32dfd7b3d385e') // dev
-  // const [appid, setAppid] = useState('57ae140a945b4e7596c55f967e0a5db4') // dev
-  const [appid, setAppid] = useState('3e50c3a5a1c14aa49b17676b4ad7509e')  // test
+  const [appid, setAppid] = useState('57ae140a945b4e7596c55f967e0a5db4') // dev
+  // const [appid, setAppid] = useState('3e50c3a5a1c14aa49b17676b4ad7509e')  // test
   // const [appid, setAppid] = useState('9126decd01b447b3850798c95ea341df')  // maxhub
   const [uid, setUid] = useState('123')
-  // const [token, setToken] = useState('20126f02028f45aa91b6869316e6f02f') // dev
-  const [token, setToken] = useState('737bd677ed9248e3aaf39c698c1392b9') // test
+  const [token, setToken] = useState('20126f02028f45aa91b6869316e6f02f') // dev
+  // const [token, setToken] = useState('737bd677ed9248e3aaf39c698c1392b9') // test
   // const [roomid, setRoomid] = useState(281474988324926) // dev
   const [roomid, setRoomid] = useState(281474990411332)  // test
   const [postData, setPostData] = useState('')
